@@ -18,10 +18,10 @@ Set `BUILD_TYPE` for hardware target.
 
 Manjaro arch image recipe has support for building images for two different hardware targets.
 
-1. Respeaker Hardware Target:
+Respeaker Hardware Target:
 
 ``` shell
-docker run --privileged \
+podmab run --privileged \
 -v $pwd/output/:/output:rw \
 -v /run/systemd/resolve:/run/systemd/resolve \
 -e CORE_REF=${CORE_REF:-dev} \
@@ -33,17 +33,7 @@ docker run --privileged \
 ovos-image-builder
 ```
 
-2. Mycroft Mark-2 and Mark-2 Dev Kit Hardware Target:
 
-``` shell
-docker run --privileged \
--v $pwd/output/:/output:rw \
--v /run/systemd/resolve:/run/systemd/resolve \
--e CORE_REF=${CORE_REF:-dev} \
--e RECIPE_REF=${RECIPE_REF:-master} \
--e MAKE_THREADS=${MAKE_THREADS:-4} \
--e BUILD_TYPE=mark2 \
---network=host \
 --name=ovos-image-builder \
 ovos-image-builder
 ```
