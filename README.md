@@ -1,22 +1,14 @@
 # ovos-image-arch-recipe
-
-This repository is no longer maintainer by OpenVoiceOS and remains only as reference, no new images are being built
-
 _____________
 
-Manjaro arch based recipe for building OVOS images
+### Forked for Fedora 38 / podman
+_____________
 
-## Docker Automated Image Building
-The included Dockerfile can be used to build a default image in a Docker environment.
-The following dependencies must be installed on the build system before running the
-container:
 
-* [chroot](https://wiki.debian.org/chroot)
-* [qemu-user-static](https://wiki.debian.org/QemuUserEmulation)
 
 First, create the Docker container:
 ```shell
-docker build . -t ovos-image-builder
+$ podman build . -t ovos-image-builder
 ```
 
 Then, run the container to create a OVOS Image. Set `CORE_REF` to the branch of
